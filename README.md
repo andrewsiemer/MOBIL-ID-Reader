@@ -16,6 +16,9 @@ The MOBIL-ID Reader is a slave device responsible for scanning MOBIL-ID made pas
 - Steve Maher - Professor/Mentor
 - Luke Hartman - Customer/Mentor
 
+
+
+
 ## Hardware Setup (WIP)
 ### Parts
 * Raspberry Pi Zero W

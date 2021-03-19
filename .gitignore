@@ -1,0 +1,10 @@
+# Virual Environment
+bin/
+lib/
+pyvenv.cfg
+
+
+# macOS & Cache Files
+.DS_Store
+__pycache__/
+.vscode/

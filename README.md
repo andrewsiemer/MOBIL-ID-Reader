@@ -34,10 +34,10 @@
 * [Headless Raspberry Pi Setup](https://pimylifeup.com/headless-raspberry-pi-setup/)
 
 ### Rsapberry Pi First Boot
-Before we start check that you have:
-* A clean installation of Raspberry Pi OS LITE on a microSD card
-* Added the `ssh` file to the `/boot` directory
-* Added the `wpa_supplicant.conf` file to the `/boot` directory
+Before we start, check that you have:
+1. A clean installation of Raspberry Pi OS LITE on a microSD card
+2. Added the `ssh` file to the `/boot` directory
+3. Added the `wpa_supplicant.conf` file to the `/boot` directory
 
 **You will not be able to continue without completing these steps. Use the links above to properly allow headless setup.**
 

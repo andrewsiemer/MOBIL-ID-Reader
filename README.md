@@ -14,8 +14,8 @@
 | [Header - 2x5 Pin](https://www.sparkfun.com/products/15362) | $1.50 | male, 1.27mm |
 | [2x5 Pin Shrouded Header](https://www.sparkfun.com/products/8506) | $1.50 |  shrouded 10-pin connector on 0.1" centers |
 | [Raspberry Pi Zero W](https://www.adafruit.com/product/3400) | $10.00 |  header-less Pi Zero with Wifi |
-| MOBIL-ID Reader Board | $4.00 | breakout board for MAX232 & status LED |
-| 3D Printed Assembly | $4.00 | housing and fasteners for scanner, pi, & breakout board |
+| [MOBIL-ID Reader Board](/pcb) | $4.00 | breakout board for MAX232 & status LED |
+| [3D Printed Assembly](/stl) | $4.00 | housing and fasteners for scanner, pi, & breakout board |
 | [16 GB microSD Card](https://www.amazon.com/8-Pack-Bulk-Micro-Memory-Adapter/dp/B081CGNB9Y) | $3.75 | microSD card for Raspberry PI |
 | [microUSB to USB-A Cable ](https://www.amazon.com/Anker-6-Pack-Powerline-Micro-USB/dp/B015XPU7RC/) | $2.85 | data cable that also powers Raspberry Pi |
 

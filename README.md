@@ -33,6 +33,14 @@
 * [Install Raspberry Pi OS LITE using Raspberry Pi Imager](https://www.raspberrypi.org/software/)
 * [Headless Raspberry Pi Setup](https://pimylifeup.com/headless-raspberry-pi-setup/)
 
+### Rsapberry Pi First Boot
+Before we start check that you have:
+* A clean installation of Raspberry Pi OS LITE on a microSD card
+* Added the `ssh` file to the `/boot` directory
+* Added the `wpa_supplicant.conf` file to the `/boot` directory
+
+**You will not be able to continue without completing these steps. Use the links above to properly allow headless setup.**
+
 ### Login to Raspberry Pi Remotely
 In macOS/Linux, open Terminal:
 ```sh
@@ -47,11 +55,11 @@ curl https://raw.githubusercontent.com/andrewsiemer/MOBIL-ID-Software/master/rea
 ```
 This script installs software for the MOBIL-ID Reader on the Raspberry Pi.
 This includes:
-- Creating a new hostname & password
-- Updating the package index files (apt-get update)
-- Installing prerequisite software
-- Installing MOBIL-ID software and examples
-- Configuring boot options
+* Creating a new hostname & password
+* Updating the package index files (apt-get update)
+* Installing prerequisite software
+* Installing MOBIL-ID software and examples
+* Configuring boot options
 
 Run time ~20 minutes. Reboot recommended after install.
 EXISTING INSTALLATION, IF ANY, WILL BE OVERWRITTEN.

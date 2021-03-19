@@ -64,8 +64,7 @@ This includes:
 * Installing MOBIL-ID software and examples
 * Configuring boot options
 
-Run time ~20 minutes. Reboot recommended after install.
-EXISTING INSTALLATION, IF ANY, WILL BE OVERWRITTEN.
+**Run time ~20 minutes. Reboot recommended after install. EXISTING INSTALLATION, IF ANY, WILL BE OVERWRITTEN.**
 
 > Please note the MOBIL-ID Reader will not work correctly until the system has been rebooted.
 

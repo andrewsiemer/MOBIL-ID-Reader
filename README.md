@@ -54,7 +54,7 @@ The default password is `raspberry`.
 ### Run the MOBIL-ID Reader Installer
 Once you are logged into as user `pi` run:
 ``` sh
-curl https://raw.githubusercontent.com/andrewsiemer/MOBIL-ID-Software/master/reader/software/install.sh > install.sh && sudo bash install.sh
+curl https://raw.githubusercontent.com/andrewsiemer/MOBIL-ID-Reader/main/install.sh > install.sh && sudo bash install.sh
 ```
 This script installs software for the MOBIL-ID Reader on the Raspberry Pi.
 This includes:

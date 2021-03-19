@@ -1,3 +1,11 @@
+## What is MOBIL-ID?
+### A Python web service & embedded reader for Apple PassKit
+
+The MOBIL-ID project is an engineering systems capstone project for Oklahoma Christian University. The team’s mission statement is to create a mobile platform front-end to Oklahoma Christian University’s user management system. Students and Faculty will use their mobile ID to gain chapel attendance, enter the university cafeteria, and pay using Eagle Bucks. While the MOBIL-ID Server is a closed-source system for security, the MOBIL-ID Reader is an open-source project.
+
+## MOBIL-ID Reader
+The MOBIL-ID Reader is a slave device responsible for scanning MOBIL-ID made passes. It captures the QR data from a scanned pass and sends it in a GET request to the MOBIL-ID Server. The MOBIL-ID Server returns the associated user ID number. The MOBIL-ID Reader then hands the ID number to the transactional system via the USB connection.
+
 ## Hardware Setup (WIP)
 ### Parts
 * Raspberry Pi Zero W

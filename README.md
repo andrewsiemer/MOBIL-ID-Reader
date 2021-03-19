@@ -52,6 +52,7 @@ This includes:
 - Installing prerequisite software
 - Installing MOBIL-ID software and examples
 - Configuring boot options
+
 Run time ~20 minutes. Reboot recommended after install.
 EXISTING INSTALLATION, IF ANY, WILL BE OVERWRITTEN.
 

@@ -61,6 +61,7 @@ EXISTING INSTALLATION, IF ANY, WILL BE OVERWRITTEN.
 ### MOBIL-ID Reader Status Codes
 Once the MOBIL-ID Reader software is installed correctly and has been rebooted, the unit will use the LED on the MOBIL-ID Reader Board to show its status.
 | LED Color | Description |
+| ----------- | ----------- |
 | Magenta | reader powered, starting program (~1 min) |
 | Turquoise | getting software update (<30 secs) |
 | Yellow | waiting to connect to server |

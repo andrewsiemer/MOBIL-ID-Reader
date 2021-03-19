@@ -68,7 +68,7 @@ This includes:
 
 > Please note the MOBIL-ID Reader will not work correctly until the system has been rebooted.
 
-### MOBIL-ID Reader Status Codes
+## MOBIL-ID Reader Status Codes
 Once the MOBIL-ID Reader software is installed correctly and has been rebooted, the unit will use the LED on the MOBIL-ID Reader Board to show its status.
 | LED Color | Description |
 | ----------- | ----------- |

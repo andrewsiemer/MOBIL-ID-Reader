@@ -40,7 +40,7 @@ ssh pi@raspberrypi.local
 ```
 The default password is `raspberry`.
 
-### Run the MOBIL-ID-Reader Installer
+### Run the MOBIL-ID Reader Installer
 Once you are logged into as user `pi` run:
 ``` sh
 curl https://raw.githubusercontent.com/andrewsiemer/MOBIL-ID-Software/master/reader/software/install.sh > install.sh && sudo bash install.sh
@@ -58,15 +58,11 @@ EXISTING INSTALLATION, IF ANY, WILL BE OVERWRITTEN.
 
 > Please note the MOBIL-ID Reader will not work correctly until the system has been rebooted.
 
-## References
-### Hardware
-*
-
-### Raspberry Pi Setup
-* [Changing the Raspberry Pi's Hostname](https://pimylifeup.com/raspberry-pi-hostname/)
-* [Changing the Raspberry Pi's Password](https://pimylifeup.com/default-raspbian-username-and-password/)
-* [Pi USB Keyboard](https://randomnerdtutorials.com/raspberry-pi-zero-usb-keyboard-hid/) - setup pi as HID keyboard
-* [Start Program on Boot](https://www.dexterindustries.com/howto/run-a-program-on-your-raspberry-pi-at-startup/) - Start Program on Boot
-
-### MOBIL-ID Software
-*
+### MOBIL-ID Reader Status Codes
+Once the MOBIL-ID Reader software is installed correctly and has been rebooted, the unit will use the LED on the MOBIL-ID Reader Board to show its status.
+| LED Color | Description |
+| Magenta | reader powered, starting program (~1 min) |
+| Turquoise | getting software update (<30 secs) |
+| Yellow | waiting to connect to server |
+| Green | connected, ready to scan |
+| Red | processing scan |

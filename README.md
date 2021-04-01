@@ -46,7 +46,7 @@ The MOBIL-ID Reader is a slave device responsible for scanning MOBIL-ID passes. 
 
 
 ### RTscan RT830A Setup
-![Resore to Factory Defaults](/img/restore-defaults.png)
+![Resore to Factory Defaults](/img/restore-defaults.png | width=200)
 ![Set to RS232 Mode](/img/RS232.png)
 ![Set Success Beep Medium](/img/beep-medium.png)
 

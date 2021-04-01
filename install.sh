@@ -1,5 +1,8 @@
 #!/bin/bash
 
+SERVER = 'https://www.ocmobileid.com'
+REPO = 'https://github.com/andrewsiemer/MOBIL-ID-Reader'
+
 # INSTALLER SCRIPT FOR MOBIL-ID Reader
 
 if [ $(id -u) -ne 0 ]; then
@@ -13,10 +16,11 @@ clear
 echo "This script installs software for the"
 echo "MOBIL-ID Reader on the Raspberry Pi."
 echo "This includes:"
-echo "- Update package index files (apt-get update)"
-echo "- Install prerequisite software"
-echo "- Install MOBIL-ID software and examples"
-echo "- Configure boot options"
+echo "- Creating a new hostname & password"
+echo "- Updating the package index files (apt-get update)"
+echo "- Installing prerequisite software"
+echo "- Installing MOBIL-ID software and examples"
+echo "- Configuring boot options"
 echo "Run time ~20 minutes. Reboot recommended after install."
 echo "EXISTING INSTALLATION, IF ANY, WILL BE OVERWRITTEN."
 echo
@@ -62,11 +66,11 @@ sudo apt-get update -y
 echo "Downloading prerequisites..."
 sudo apt install git-all -y
 sudo apt-get install python3-pip -y
-sudo apt-get install python3-venv
+sudo apt-get install python3-venv -y
 
 echo "Downloading MOBIL-ID Reader software..."
 cd /home/pi
-git clone https://github.com/andrewsiemer/MOBIL-ID-Reader
+git clone $REPO
 
 echo "Setting up virtual environment..."
 python3 -m venv /home/pi/MOBIL-ID-Reader
@@ -155,6 +159,8 @@ sudo systemctl start mobil-id.service
 echo "Enabling UART..."
 sudo sed -i '/enable_uart/d' /boot/config.txt
 echo "enable_uart=1" | sudo tee -a /boot/config.txt
+sudo sed -i 's+ console=serial0,115200++' /boot/cmdline.txt
+sudo sed -i 's+ console=tty1++' /boot/cmdline.txt
 
 sudo sed -i '/raspberrypi/d' /etc/hostname
 sudo sed -i '/MOBIL-ID-Reader-/d' /etc/hostname

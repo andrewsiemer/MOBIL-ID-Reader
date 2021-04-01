@@ -46,8 +46,15 @@ The MOBIL-ID Reader is a slave device responsible for scanning MOBIL-ID passes. 
 
 
 ### RTscan RT830A Setup
-![Resore to Factory Defaults](/img/restore-defaults.png | width=200)
+With the RTscan unit powered on scan the codes below to program the device.
+
+First, scan this barcode to set the device to factory defaults.
+![Resore to Factory Defaults](/img/restore-defaults.png)
+
+Next, scan this barcode to set the device to RS232 mode.
 ![Set to RS232 Mode](/img/RS232.png)
+
+Lastly, scan this barcode to set the successful read tone to medium.
 ![Set Success Beep Medium](/img/beep-medium.png)
 
 ...

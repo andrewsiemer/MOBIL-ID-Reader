@@ -16,8 +16,7 @@ The MOBIL-ID Reader is a slave device responsible for scanning MOBIL-ID passes. 
 - Steve Maher - Professor/Mentor
 - Luke Hartman - Customer/Mentor
 
-
-
+---
 
 ## Hardware Setup (WIP)
 ### Parts
@@ -42,10 +41,12 @@ The MOBIL-ID Reader is a slave device responsible for scanning MOBIL-ID passes. 
 
 
 ### Tools
-* Soldering Iron & Solder
-* Wirestripers
-* Heatshrink
-* 22 AWG copper wire
+* 
+*
+
+
+### RTscan RT830A Setup
+![Resore to Factory Defaults](/img/restore.png)
 
 ...
 
@@ -63,7 +64,7 @@ Before we start, check that you have:
 **You will not be able to continue without completing these steps. Use the links above to properly allow headless setup.**
 
 If you are confident you have completed the steps above, put the microSD card into the Raspberry Pi and plug the USB power cable in.
-You should hear a startup beep and the LED on the MOBIL-ID Reader Board should be magenta. If one of theses did not happen, you will need to troubleshoot your hardware setup.
+You should hear a startup beep and the LED on the MOBIL-ID Reader Board should be magenta. If one of theses did not happen, you will need to troubleshoot your hardware setup
 
 ### Login to Raspberry Pi Remotely
 In macOS/Linux, open Terminal:

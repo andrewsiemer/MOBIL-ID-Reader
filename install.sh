@@ -158,7 +158,7 @@ sudo systemctl start mobil-id.service
 echo "Enabling UART..."
 sudo sed -i '/enable_uart/d' /boot/config.txt
 echo "enable_uart=1" | sudo tee -a /boot/config.txt
-sudo sed -i 's+ console=serial0,115200++' /boot/cmdline.txt
+sudo sed -i 's+console=serial0,115200 ++' /boot/cmdline.txt
 sudo sed -i 's+ console=tty1++' /boot/cmdline.txt
 
 sudo sed -i '/raspberrypi/d' /etc/hostname

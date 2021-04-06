@@ -1,7 +1,6 @@
 #!/bin/bash
 
 SERVER = 'https://www.ocmobileid.com'
-REPO = 'https://github.com/andrewsiemer/MOBIL-ID-Reader'
 
 # INSTALLER SCRIPT FOR MOBIL-ID Reader
 
@@ -70,7 +69,7 @@ sudo apt-get install python3-venv -y
 
 echo "Downloading MOBIL-ID Reader software..."
 cd /home/pi
-git clone $REPO
+git clone https://github.com/andrewsiemer/MOBIL-ID-Reader
 
 echo "Setting up virtual environment..."
 python3 -m venv /home/pi/MOBIL-ID-Reader

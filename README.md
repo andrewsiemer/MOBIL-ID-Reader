@@ -18,49 +18,12 @@ The MOBIL-ID Reader is a slave device responsible for scanning MOBIL-ID passes. 
 
 ---
 
-## Hardware Setup (WIP)
-### Parts
-* Raspberry Pi Zero W
-* 8GB microSD card
-* microUSB to USB-A cable
-* MAX232 Breakout Board
-* RTscan RT830A Scanner
-* 3D Printed Housing (optional)
+## Hardware Setup
 
-| Part | Cost | Description |
-| ----------- | ----------- | --------- |
-| [RTscan RT830A](https://www.rtscan.net/Code-Readers/hands-free-bar-code-scanner-rt830a/) | $55-68 | hands-free 2D and QR bar code scanner |
-| [10-pin IDC cable](https://www.adafruit.com/product/556?gclid=CjwKCAiA9bmABhBbEiwASb35V9Td5R1iaUAHqUNImX9ycXJjJYyvrB65bvPPx45-ikyqEljMJOcw4RoCfNQQAvD_BwE) | $1.50 | 10-pin Socket/Socket IDC cable - Short 1.5" |
-| [Header - 2x5 Pin](https://www.sparkfun.com/products/15362) | $1.50 | male, 1.27mm |
-| [2x5 Pin Shrouded Header](https://www.sparkfun.com/products/8506) | $1.50 |  shrouded 10-pin connector on 0.1" centers |
-| [Raspberry Pi Zero W](https://www.adafruit.com/product/3400) | $10.00 |  header-less Pi Zero with Wifi |
-| [MOBIL-ID Reader Board](/pcb) | $4.00 | breakout board for MAX232 & status LED |
-| [3D Printed Assembly](/stl) | $4.00 | housing and fasteners for scanner, pi, & breakout board |
-| [16 GB microSD Card](https://www.amazon.com/8-Pack-Bulk-Micro-Memory-Adapter/dp/B081CGNB9Y) | $3.75 | microSD card for Raspberry PI |
-| [microUSB to USB-A Cable ](https://www.amazon.com/Anker-6-Pack-Powerline-Micro-USB/dp/B015XPU7RC/) | $2.85 | data cable that also powers Raspberry Pi |
+> The hardware setup guide is currently a work in progress
 
+### [View Hardware Setup Guide](https://docs.google.com/document/d/1EBEo_Zr7OZ9AODJT-2cf_hYnRvtXFjDW9OjWyJNuSes)
 
-### Tools
-* 
-*
-
-
-### RTscan RT830A Setup
-With the RTscan unit powered on scan the codes below to program the device.
-
-First, scan this barcode to set the device to factory defaults.
-
-![Resore to Factory Defaults](/img/restore-defaults.png)
-
-Next, scan this barcode to set the device to RS232 mode.
-
-![Set to RS232 Mode](/img/RS232.png)
-
-Lastly, scan this barcode to set the successful read tone to medium.
-
-![Set Success Beep Medium](/img/beep-medium.png)
-
-...
 
 ## Software Setup
 ### Prerequisites

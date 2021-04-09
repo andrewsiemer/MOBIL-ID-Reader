@@ -81,6 +81,11 @@ pip3 install -r requirements.txt
 
 # CONFIG -------------------------------------------------------------------
 
+echo "Configuring MOBIL-ID software..."
+touch /home/pi/MOBIL-ID-Reader/config.py
+sudo sed -i '/SERIAL_NUMBER/d' /home/pi/MOBIL-ID-Reader/config.py
+echo "SERIAL_NUMBER = '"$ID"'" | sudo tee -a /home/pi/MOBIL-ID-Reader/config.py
+
 echo "Configuring system..."
 sudo sed -i 's+ init=/bin/systemd++' /boot/cmdline.txt
 sudo sed -i 's+$+ init=/bin/systemd+' /boot/cmdline.txt

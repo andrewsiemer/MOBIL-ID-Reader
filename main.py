@@ -5,6 +5,7 @@ import time, subprocess
 
 import serial, requests, git
 
+import config
 from include.hid import Keyboard
 from include.rgb import C193878
 
@@ -91,7 +92,7 @@ if __name__ == "__main__":
         # read line from UART
         x = ser.readline()
         # input recived, start timer
-        start = time.time()
+        #start = time.time()
         if len(x) > 1:
             led.set_red()
             try:
@@ -100,15 +101,14 @@ if __name__ == "__main__":
                 qr_hash = x.decode('utf-8')
 
                 # try to GET ID number from server
-                r = requests.get(WEB_SERVICE_URL + '/scan/' + qr_hash, timeout=1)
+                r = requests.get(WEB_SERVICE_URL + '/scan/' + qr_hash + '?reader=' + config.SERIAL_NUMBER, timeout=1)
                 if r.status_code == 200:
                     id_number = r.json()
 
                     # write ID number to host keyboard
                     kbd.write(str(id_number) + '\n')
-                    time.sleep(0.07)
 
-                    print('QR Hash: ' + qr_hash + '     ID Number: ' + id_number + '     (' + str(round(((time.time() - start)*1000), 2)) + ' ms)')
+                    #print('QR Hash: ' + qr_hash + '     ID Number: ' + id_number + '     (' + str(round(((time.time() - start)*1000), 2)) + ' ms)')
                 else:
                     raise Exception('204')
 

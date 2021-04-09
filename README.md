@@ -7,14 +7,14 @@ The MOBIL-ID project is an engineering systems capstone project for Oklahoma Chr
 The MOBIL-ID Reader is a slave device responsible for scanning MOBIL-ID passes. It captures the QR data from a scanned pass and sends it in a GET request to the MOBIL-ID Server. The MOBIL-ID Server returns the associated user ID number. The MOBIL-ID Reader then hands the ID number to the transactional system via the USB connection. Below is a guide to creating a fully functional MOBIL-ID Reader.
 
 ### The MOBIL-ID Team
-- Andrew Siemer - Electrical/Software Engineer - Team Lead
-- Jacob Button - Electrical/Software Engineer
-- Kyla Tarpey - Electrical Engineer
-- Zach Jones - Computer/Software Engineer
+* Andrew Siemer - Electrical/Software Engineer - Team Lead
+* Jacob Button - Electrical/Software Engineer
+* Kyla Tarpey - Electrical Engineer
+* Zach Jones - Computer/Software Engineer
 
 ### Acknowledgments
-- Steve Maher - Professor/Mentor
-- Luke Hartman - Customer/Mentor
+* Steve Maher - Professor/Mentor
+* Luke Hartman - Customer/Mentor
 
 ---
 
@@ -32,14 +32,15 @@ The MOBIL-ID Reader is a slave device responsible for scanning MOBIL-ID passes. 
 
 ### Rsapberry Pi First Boot
 Before we start, check that you have:
-1. A clean installation of Raspberry Pi OS LITE on a microSD card
-2. Added the `ssh` file to the `/boot` directory
-3. Added the `wpa_supplicant.conf` file to the `/boot` directory
+
+* A clean installation of Raspberry Pi OS LITE on a microSD card
+* Added the `ssh` file to the `/boot` directory
+* Added the `wpa_supplicant.conf` file to the `/boot` directory
 
 **You will not be able to continue without completing these steps. Use the links above to properly allow headless setup.**
 
 If you are confident you have completed the steps above, put the microSD card into the Raspberry Pi and plug the USB power cable in.
-You should hear a startup beep and the LED on the MOBIL-ID Reader Board should be magenta. If one of theses did not happen, you will need to troubleshoot your hardware setup
+You should hear a startup beep and the LED on the MOBIL-ID Reader Board should be magenta. If one of theses did not happen, you will need to troubleshoot your hardware setup.
 
 ### Login to Raspberry Pi Remotely
 In macOS/Linux, open Terminal:
@@ -54,7 +55,9 @@ Once you are logged into as user `pi` run:
 curl https://raw.githubusercontent.com/andrewsiemer/MOBIL-ID-Reader/main/install.sh > install.sh && sudo bash install.sh
 ```
 This script installs software for the MOBIL-ID Reader on the Raspberry Pi.
+
 This includes:
+
 * Creating a new hostname & password
 * Updating the package index files (apt-get update)
 * Installing prerequisite software
@@ -67,10 +70,11 @@ This includes:
 
 ## MOBIL-ID Reader Status Codes
 Once the MOBIL-ID Reader software is installed correctly and has been rebooted, the unit will use the LED on the MOBIL-ID Reader Board to show its status.
+
 | LED Color | Description |
 | ----------- | ----------- |
 | Magenta | reader powered, starting program (~1 min) |
-| Turquoise | getting software update (<30 secs) |
+| Turquoise | connecting to network/updating software (<30 secs) |
 | Yellow | waiting to connect to server |
 | Green | connected, ready to scan |
 | Red | processing scan |

@@ -29,7 +29,7 @@ The Hardware Setup Guide is a long but detailed document that steps through the 
 * [Install Raspberry Pi OS LITE using Raspberry Pi Imager](https://www.raspberrypi.org/software/)
 * [Headless Raspberry Pi Setup](https://pimylifeup.com/headless-raspberry-pi-setup/)
 
-### Rsapberry Pi First Boot
+### Raspberry Pi First Boot
 Before we start, check that you have:
 
 * A clean installation of Raspberry Pi OS LITE on a microSD card

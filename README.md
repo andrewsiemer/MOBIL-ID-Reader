@@ -19,8 +19,7 @@ The MOBIL-ID Reader is a slave device responsible for scanning MOBIL-ID passes. 
 ---
 
 ## Hardware Setup
-
-> The hardware setup guide is currently a work in progress
+The Hardware Setup Guide is a long but detailed document that steps through the entire process of creating a MOBIL-ID Reader. The document can be viewed or downloaded from the link below.
 
 ### [View Hardware Setup Guide](https://docs.google.com/document/d/1EBEo_Zr7OZ9AODJT-2cf_hYnRvtXFjDW9OjWyJNuSes)
 

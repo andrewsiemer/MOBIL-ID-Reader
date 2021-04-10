@@ -68,6 +68,11 @@ sudo apt-get install python3-pip -y
 sudo apt-get install python3-venv -y
 
 echo "Downloading MOBIL-ID Reader software..."
+if [ ! -d "/home/pi/MOBIL-ID-Reader" ] 
+then
+    sudo rm -r /home/pi/MOBIL-ID-Reader
+fi
+
 cd /home/pi
 git clone https://github.com/andrewsiemer/MOBIL-ID-Reader
 

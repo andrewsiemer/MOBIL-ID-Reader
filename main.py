@@ -5,6 +5,7 @@ import time, subprocess
 
 import serial, requests, git
 
+import config
 from include.hid import Keyboard
 from include.rgb import C193878
 
@@ -22,15 +23,18 @@ def check_for_updates():
     print('Checking for update...')
     led.set_turquoise()
 
-    repo = git.Repo('/home/pi/MOBIL-ID-Reader')
+    try:
+        repo = git.Repo('/home/pi/MOBIL-ID-Reader')
 
-    current = repo.head.commit
-    repo.remotes.origin.pull()
-    if current != repo.head.commit:
-        print("Installing updates...")
+        current = repo.head.commit
         repo.remotes.origin.pull()
-        subprocess.call('sudo systemctl restart mobil-id.service', shell=True)
-        quit()
+        if current != repo.head.commit:
+            print("Installing updates...")
+            repo.remotes.origin.pull()
+            subprocess.call('sudo systemctl restart mobil-id.service', shell=True)
+            quit()
+    except:
+        pass
 
 # Setup UART for TTL signal from MAX232 chip
 def setup_serial():
@@ -54,6 +58,7 @@ def setup_ibeacon():
     '''
     print('Turning on iBeacon...')
     led.set_blue()
+    
     subprocess.call('sudo hciconfig hci0 up', shell=True)
     subprocess.call('sudo hciconfig hci0 leadv 3', shell=True)
     subprocess.call('sudo hcitool -i hci0 cmd 0x08 0x0008 1E 02 01 06 1A FF 4C 00 02 15 1F 23 44 54 CF 6D 4A 0F AD F2 F4 91 1B A9 FF A9 00 01 00 01 C8 00', shell=True)
@@ -87,7 +92,7 @@ if __name__ == "__main__":
         # read line from UART
         x = ser.readline()
         # input recived, start timer
-        start = time.time()
+        #start = time.time()
         if len(x) > 1:
             led.set_red()
             try:
@@ -96,15 +101,14 @@ if __name__ == "__main__":
                 qr_hash = x.decode('utf-8')
 
                 # try to GET ID number from server
-                r = requests.get(WEB_SERVICE_URL + '/scan/' + qr_hash, timeout=1)
+                r = requests.get(WEB_SERVICE_URL + '/scan/' + qr_hash + '?reader=' + config.SERIAL_NUMBER, timeout=1)
                 if r.status_code == 200:
                     id_number = r.json()
 
                     # write ID number to host keyboard
                     kbd.write(str(id_number) + '\n')
-                    time.sleep(0.07)
 
-                    print('QR Hash: ' + qr_hash + '     ID Number: ' + id_number + '     (' + str(round(((time.time() - start)*1000), 2)) + ' ms)')
+                    #print('QR Hash: ' + qr_hash + '     ID Number: ' + id_number + '     (' + str(round(((time.time() - start)*1000), 2)) + ' ms)')
                 else:
                     raise Exception('204')
 

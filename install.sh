@@ -1,5 +1,7 @@
 #!/bin/bash
 
+SERVER = 'https://www.ocmobileid.com'
+
 # INSTALLER SCRIPT FOR MOBIL-ID Reader
 
 if [ $(id -u) -ne 0 ]; then
@@ -13,10 +15,11 @@ clear
 echo "This script installs software for the"
 echo "MOBIL-ID Reader on the Raspberry Pi."
 echo "This includes:"
-echo "- Update package index files (apt-get update)"
-echo "- Install prerequisite software"
-echo "- Install MOBIL-ID software and examples"
-echo "- Configure boot options"
+echo "- Creating a new hostname & password"
+echo "- Updating the package index files (apt-get update)"
+echo "- Installing prerequisite software"
+echo "- Installing MOBIL-ID software and examples"
+echo "- Configuring boot options"
 echo "Run time ~20 minutes. Reboot recommended after install."
 echo "EXISTING INSTALLATION, IF ANY, WILL BE OVERWRITTEN."
 echo
@@ -62,9 +65,14 @@ sudo apt-get update -y
 echo "Downloading prerequisites..."
 sudo apt install git-all -y
 sudo apt-get install python3-pip -y
-sudo apt-get install python3-venv
+sudo apt-get install python3-venv -y
 
 echo "Downloading MOBIL-ID Reader software..."
+if [ ! -d "/home/pi/MOBIL-ID-Reader" ] 
+then
+    sudo rm -r /home/pi/MOBIL-ID-Reader
+fi
+
 cd /home/pi
 git clone https://github.com/andrewsiemer/MOBIL-ID-Reader
 
@@ -77,6 +85,11 @@ echo "Downloading dependencies..."
 pip3 install -r requirements.txt
 
 # CONFIG -------------------------------------------------------------------
+
+echo "Configuring MOBIL-ID software..."
+touch /home/pi/MOBIL-ID-Reader/config.py
+sudo sed -i '/SERIAL_NUMBER/d' /home/pi/MOBIL-ID-Reader/config.py
+echo "SERIAL_NUMBER = '"$ID"'" | sudo tee -a /home/pi/MOBIL-ID-Reader/config.py
 
 echo "Configuring system..."
 sudo sed -i 's+ init=/bin/systemd++' /boot/cmdline.txt
@@ -155,6 +168,8 @@ sudo systemctl start mobil-id.service
 echo "Enabling UART..."
 sudo sed -i '/enable_uart/d' /boot/config.txt
 echo "enable_uart=1" | sudo tee -a /boot/config.txt
+sudo sed -i 's+console=serial0,115200 ++' /boot/cmdline.txt
+sudo sed -i 's+ console=tty1++' /boot/cmdline.txt
 
 sudo sed -i '/raspberrypi/d' /etc/hostname
 sudo sed -i '/MOBIL-ID-Reader-/d' /etc/hostname

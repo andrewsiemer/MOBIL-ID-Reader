@@ -42,7 +42,7 @@ If you are confident you have completed the steps above, put the microSD card in
 You should hear a startup beep and the LED on the MOBIL-ID Reader Board should be magenta. If one of theses did not happen, you will need to troubleshoot your hardware setup.
 
 ### Login to Raspberry Pi Remotely
-In macOS/Linux, open Terminal:
+In macOS/Linux, open Terminal and enter:
 ```sh
 ssh pi@raspberrypi.local
 ```
@@ -65,7 +65,9 @@ This includes:
 
 **Run time ~20 minutes. Reboot recommended after install. EXISTING INSTALLATION, IF ANY, WILL BE OVERWRITTEN.**
 
-> Please note the MOBIL-ID Reader will not work correctly until the system has been rebooted.
+> The MOBIL-ID Reader will not work correctly until the system has been rebooted.
+
+---
 
 ## MOBIL-ID Reader Status Codes
 Once the MOBIL-ID Reader software is installed correctly and has been rebooted, the unit will use the LED on the MOBIL-ID Reader Board to show its status.

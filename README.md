@@ -6,6 +6,11 @@ The MOBIL-ID project is an engineering systems capstone project for Oklahoma Chr
 ### MOBIL-ID Reader
 The MOBIL-ID Reader is a slave device responsible for scanning MOBIL-ID passes. It captures the QR data from a scanned pass and sends it in a GET request to the MOBIL-ID Server. The MOBIL-ID Server returns the associated user ID number. The MOBIL-ID Reader then hands the ID number to the transactional system via the USB connection. Below is a guide to creating a fully functional MOBIL-ID Reader.
 
+![OC-graphic](/img/OC-graphic-reader.jpeg)
+
+### MOBIL-ID Server
+The MOBIL-ID Server is a Python web service responsible for creating, deploying, and updating passes using Apple PassKit & Google Pay API. It tracks the pass’s complete lifecycle. When a user requests a pass, the server gets the user's data from OC’s database, creates a new pass, and signs it before delivering it to the user. It keeps a log of every pass it creates. When a user adds the pass to Apple Wallet, the pass will send a registration request to our server. The server will log the device id and pass relationship. When users data is changed, the MOBIL-ID server then knows what device to send the update push notification to. If a user deletes a pass of their device, the server will receive a request to delete the pass and it will be deleted from the server’s database and no longer receive updates. The user will also recieve real-time push notifications when pass data has change. [View MOBIL-ID Server](https://github.com/andrewsiemer/MOBIL-ID-Server)
+
 ### The MOBIL-ID Team
 * Andrew Siemer - Electrical/Software Engineer - Team Lead
 * Jacob Button - Electrical/Software Engineer

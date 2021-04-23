@@ -18,8 +18,9 @@ The MOBIL-ID Server is a Python web service responsible for creating, deploying,
 * Zach Jones - Computer/Software Engineer
 
 ### Acknowledgments
-* Steve Maher - Professor/Mentor
-* Luke Hartman - Customer/Mentor
+- Steve Maher - Mentor
+- Luke Hartman - Customer
+- Peyton Chenault - System Integrator
 
 ---
 

@@ -13,7 +13,7 @@ from include.rgb import C193878
 ser = None
 kbd = Keyboard()
 led = C193878(2,4,3)
-WEB_SERVICE_URL = 'https://www.ocmobileid.com'
+WEB_SERVICE_URL = 'https://mobileid.oc.edu'
 
 def check_for_updates():
     '''

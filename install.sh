@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SERVER = 'https://www.ocmobileid.com'
+SERVER = 'https://mobileid.oc.edu'
 
 # INSTALLER SCRIPT FOR MOBIL-ID Reader
 

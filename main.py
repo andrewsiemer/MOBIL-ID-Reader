@@ -70,7 +70,7 @@ def ping_server():
     while 1:
         led.off()
         try:
-            r = requests.get(WEB_SERVICE_URL, timeout=1)
+            r = requests.get(WEB_SERVICE_URL, timeout=1, verify=False)
             if r.status_code == 200:
                 break
             else:

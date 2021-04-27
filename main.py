@@ -101,7 +101,7 @@ if __name__ == "__main__":
                 qr_hash = x.decode('utf-8')
 
                 # try to GET ID number from server
-                r = requests.get(WEB_SERVICE_URL + '/scan/' + qr_hash + '?reader=' + config.SERIAL_NUMBER, timeout=1)
+                r = requests.get(WEB_SERVICE_URL + '/scan/' + qr_hash + '?reader=' + config.SERIAL_NUMBER, timeout=1, verify=False)
                 if r.status_code == 200:
                     id_number = r.json()
 

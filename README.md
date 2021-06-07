@@ -1,3 +1,7 @@
+# MOBIL-ID Reader
+
+![CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)
+
 ## What is MOBIL-ID?
 #### A Python web service & embedded reader for Apple PassKit
 
@@ -21,6 +25,9 @@ The MOBIL-ID Server is a Python web service responsible for creating, deploying,
 - Steve Maher - Mentor
 - Luke Hartman - Customer
 - Peyton Chenault - System Integrator
+
+This work is licensed under a
+[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
 
 ---
 
